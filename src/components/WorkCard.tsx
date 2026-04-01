@@ -5,7 +5,7 @@ export default function WorkCard({ work }: { work: Work }) {
   return (
     <Link
       href={`/works/${work.slug}`}
-      className="group relative flex gap-6 rounded-2xl border border-line bg-surface p-5 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-1.5 hover:border-line-hover hover:shadow-[0_16px_48px_rgba(0,0,0,0.6)]"
+      className="group relative flex gap-6 rounded-2xl border border-line bg-surface p-5 backdrop-blur-xl shadow-[0_8px_40px_rgba(0,0,0,0.6)] transition-all duration-300 hover:-translate-y-1.5 hover:border-line-hover hover:shadow-[0_20px_60px_rgba(0,0,0,0.7)]"
     >
       {/* Corner brackets - visible on hover */}
       <span className="pointer-events-none absolute top-2 left-2 h-2.5 w-2.5 border-t border-l border-accent2/0 transition-all duration-500 group-hover:border-accent2/30" />
