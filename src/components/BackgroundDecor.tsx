@@ -3,7 +3,7 @@
 export default function BackgroundDecor() {
   return (
     <div
-      className="pointer-events-none fixed inset-0 overflow-hidden"
+      className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
       aria-hidden="true"
     >
       {/* Glow orb — gold, top-left */}
@@ -28,7 +28,7 @@ export default function BackgroundDecor() {
 
       {/* Vertical gradient line — right side */}
       <div
-        className="absolute top-[18%] right-[14%] h-[80px] w-[2px]"
+        className="absolute top-[18%] right-[4%] h-[80px] w-[2px]"
         style={{
           background:
             "linear-gradient(to bottom, transparent, rgba(212,168,83,0.3), transparent)",
