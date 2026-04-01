@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio v2 学習記録</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background: #050816;
+    color: #f5f0e8;
+    padding: 40px 24px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #f97316, #d4a853);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .subtitle { color: rgba(245,240,232,0.5); font-size: 0.9rem; margin-bottom: 40px; }
+  h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #d4a853;
+    margin: 48px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(212,168,83,0.15);
+  }
+  h3 { font-size: 1rem; font-weight: 600; color: #f5f0e8; margin: 24px 0 12px; }
+  p { color: rgba(245,240,232,0.7); font-size: 0.9rem; line-height: 1.7; margin-bottom: 12px; }
+  .section {
+    background: rgba(15,23,42,0.5);
+    border: 1px solid rgba(212,168,83,0.1);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 24px;
+  }
+  .mermaid-container {
+    background: rgba(5,8,22,0.6);
+    border: 1px solid rgba(212,168,83,0.08);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 16px 0;
+    overflow-x: auto;
+  }
+  .comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 16px 0;
+  }
+  @media (max-width: 640px) { .comparison { grid-template-columns: 1fr; } }
+  .code-block {
+    background: rgba(5,8,22,0.8);
+    border: 1px solid rgba(212,168,83,0.08);
+    border-radius: 10px;
+    padding: 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    overflow-x: auto;
+  }
+  .code-block .label {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  .before .label { background: rgba(239,68,68,0.15); color: #f87171; }
+  .after .label { background: rgba(34,197,94,0.15); color: #4ade80; }
+  .code-block code { color: rgba(245,240,232,0.8); white-space: pre; }
+  .highlight { color: #d4a853; }
+  .highlight-orange { color: #f97316; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    margin: 16px 0;
+  }
+  th {
+    text-align: left;
+    padding: 10px 12px;
+    background: rgba(212,168,83,0.08);
+    color: #d4a853;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(212,168,83,0.15);
+  }
+  td {
+    padding: 10px 12px;
+    color: rgba(245,240,232,0.7);
+    border-bottom: 1px solid rgba(212,168,83,0.06);
+  }
+  tr.selected td { background: rgba(249,115,22,0.06); }
+  .badge {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 4px;
+  }
+  .badge-server { background: rgba(212,168,83,0.12); color: #d4a853; }
+  .badge-client { background: rgba(249,115,22,0.12); color: #f97316; }
+  .checklist { list-style: none; padding: 0; }
+  .checklist li {
+    padding: 8px 0;
+    color: rgba(245,240,232,0.7);
+    font-size: 0.85rem;
+    border-bottom: 1px solid rgba(212,168,83,0.04);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .checklist li::before { content: "▸"; color: #d4a853; flex-shrink: 0; margin-top: 1px; }
+  .layer-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 16px 0;
+  }
+  .layer {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .layer .z { font-family: 'DM Mono', monospace; font-size: 0.7rem; opacity: 0.5; }
+</style>
+</head>
+<body>
+
+<h1>Portfolio v2 — 学習記録ビジュアライズ</h1>
+<p class="subtitle">lesson3 で学んだアーキテクチャ・設計判断・デザインシステムの全体像</p>
+
+<!-- 1. Component Structure -->
+<h2>1. コンポーネント構成</h2>
+<div class="section">
+  <p>全11コンポーネント。Server Component（デフォルト）と Client Component（"use client"）を明確に使い分けている。</p>
+  <div class="mermaid-container">
+    <pre class="mermaid">
+graph TD
+    Layout["layout.tsx"] --> BD["BackgroundDecor 🎨"]
+    Layout --> Top["page.tsx (トップ)"]
+    Layout --> Detail["works/[slug] (詳細)"]
+
+    Top --> H1["Header"]
+    Top --> WL["WorkList 🔄"]
+    Top --> F1["Footer"]
+
+    WL --> TF["TabFilter 🔄"]
+    WL --> SR["ScrollReveal 🔄"]
+    SR --> WC["WorkCard"]
+
+    Detail --> H2["Header"]
+    Detail --> WP["WorkPreview 🔄"]
+    Detail --> F2["Footer"]
+
+    WC -->|"Link クリック"| Detail
+
+    style BD fill:#1a0a00,stroke:#f97316,color:#f5f0e8
+    style WL fill:#1a0a00,stroke:#f97316,color:#f5f0e8
+    style TF fill:#1a0a00,stroke:#f97316,color:#f5f0e8
+    style SR fill:#1a0a00,stroke:#f97316,color:#f5f0e8
+    style WP fill:#1a0a00,stroke:#f97316,color:#f5f0e8
+    style H1 fill:#0b1f3a,stroke:#d4a853,color:#f5f0e8
+    style H2 fill:#0b1f3a,stroke:#d4a853,color:#f5f0e8
+    style F1 fill:#0b1f3a,stroke:#d4a853,color:#f5f0e8
+    style F2 fill:#0b1f3a,stroke:#d4a853,color:#f5f0e8
+    style WC fill:#0b1f3a,stroke:#d4a853,color:#f5f0e8
+    style Top fill:#050816,stroke:#555,color:#f5f0e8
+    style Detail fill:#050816,stroke:#555,color:#f5f0e8
+    style Layout fill:#050816,stroke:#555,color:#f5f0e8
+    </pre>
+  </div>
+  <p><span class="badge badge-server">Server</span> = ゴールド枠　<span class="badge badge-client">Client 🔄</span> = オレンジ枠（useState / useEffect / ブラウザAPI使用）</p>
+</div>
+
+<!-- 2. Data Flow -->
+<h2>2. データフロー</h2>
+<div class="section">
+  <div class="mermaid-container">
+    <pre class="mermaid">
+flowchart LR
+    Data["works.ts\n(静的配列)"] --> WL["WorkList\n(フィルタリング)"]
+    WL --> WC["WorkCard × N"]
+    Data --> SSG["generateStaticParams\n(ビルド時に全ページ生成)"]
+    SSG --> L1["/works/lesson1"]
+    SSG --> L2["/works/lesson2"]
+
+    style Data fill:#0b1f3a,stroke:#d4a853,color:#f5f0e8
+    style SSG fill:#0b1f3a,stroke:#f97316,color:#f5f0e8
+    style WL fill:#1a0a00,stroke:#f97316,color:#f5f0e8
+    style WC fill:#050816,stroke:#555,color:#f5f0e8
+    style L1 fill:#050816,stroke:#555,color:#f5f0e8
+    style L2 fill:#050816,stroke:#555,color:#f5f0e8
+    </pre>
+  </div>
+  <p>DB は不使用。作品データは TypeScript 配列で定義 → SSG で静的ページとして配信。高速＆無料ホスティング。</p>
+</div>
+
+<!-- 3. Design Evolution -->
+<h2>3. デザインの進化: lesson1 → 2 → 3</h2>
+<div class="section">
+  <div class="mermaid-container">
+    <pre class="mermaid">
+flowchart LR
+    L1["lesson1\nHTML/CSS/JS"] -->|"コンポーネント化"| L2["lesson2\nNext.js + Tailwind"]
+    L2 -->|"デザイントークン統合"| L3["lesson3\nNext.js + Tailwind + shadcn"]
+
+    style L1 fill:#0b1f3a,stroke:#f97316,color:#f5f0e8
+    style L2 fill:#0b1f3a,stroke:#d4a853,color:#f5f0e8
+    style L3 fill:#1a0a00,stroke:#f97316,color:#f5f0e8
+    </pre>
+  </div>
+
+  <table>
+    <tr><th></th><th>lesson1</th><th>lesson2</th><th>lesson3</th></tr>
+    <tr><td>構成</td><td>HTML + CSS + JS</td><td>Next.js + Tailwind</td><td>Next.js + Tailwind + shadcn</td></tr>
+    <tr><td>CSS管理</td><td>手書き 426行</td><td>@theme inline</td><td>デザイントークン 11色</td></tr>
+    <tr><td>配色</td><td>ネイビー × オレンジ</td><td>ウォームゴールド</td><td>オレンジ × ゴールド融合</td></tr>
+    <tr><td>背景効果</td><td>なし</td><td>グレイン + グロウ + シェイプ</td><td>+ ラインググリッド</td></tr>
+    <tr><td>ページ遷移</td><td>なし（1ページ）</td><td>なし（1ページ）</td><td>App Router + SSG</td></tr>
+  </table>
+</div>
+
+<!-- 4. Before/After -->
+<h2>4. 修正前後の比較</h2>
+
+<h3>カードの存在感の出し方</h3>
+<div class="section">
+  <p>2020年代前半: 枠線を目立たせる → 2025-26年: <strong>背景色の差 + shadow</strong> で浮かせる</p>
+  <div class="comparison">
+    <div class="code-block before">
+      <div class="label">Before ❌</div>
+      <code>border: 1px solid rgba(gold, <span class="highlight-orange">0.25</span>);
+/* 枠線が目立つ = 古い印象 */</code>
+    </div>
+    <div class="code-block after">
+      <div class="label">After ✅</div>
+      <code>border: 1px solid rgba(gold, <span class="highlight">0.1</span>);
+background: rgba(15,23,42, <span class="highlight">0.5</span>);
+box-shadow: 0 8px 40px rgba(0,0,0, <span class="highlight">0.6</span>);</code>
+    </div>
+  </div>
+</div>
+
+<h3>テキストコントラスト</h3>
+<div class="section">
+  <p>雰囲気重視で透明度を下げすぎると読めない → <strong>WCAG 4.5:1</strong> を意識してバランス調整</p>
+  <div class="comparison">
+    <div class="code-block before">
+      <div class="label">Before ❌</div>
+      <code>--ink2: rgba(cream, <span class="highlight-orange">0.5</span>); /* 読みづらい */
+--ink3: rgba(cream, <span class="highlight-orange">0.2</span>); /* ほぼ見えない */</code>
+    </div>
+    <div class="code-block after">
+      <div class="label">After ✅</div>
+      <code>--ink2: rgba(cream, <span class="highlight">0.7</span>); /* しっかり読める */
+--ink3: rgba(cream, <span class="highlight">0.35</span>); /* 存在が分かる */</code>
+    </div>
+  </div>
+</div>
+
+<!-- 5. Layer Stack -->
+<h2>5. 背景アニメーションの層構造</h2>
+<div class="section">
+  <p>7層のレイヤーで奥行きを演出。z-index の管理が重要。</p>
+  <div class="layer-stack">
+    <div class="layer" style="background:rgba(100,100,100,0.15);border:1px solid rgba(245,240,232,0.1);">
+      <span>🎞️ フィルムグレイン <code style="font-size:0.75rem;color:rgba(245,240,232,0.5);">mix-blend-mode: overlay</code></span>
+      <span class="z">z: 9999</span>
+    </div>
+    <div class="layer" style="background:rgba(15,23,42,0.5);border:1px solid rgba(212,168,83,0.15);">
+      <span>📄 コンテンツ（Header, Cards, Footer）</span>
+      <span class="z">z: auto</span>
+    </div>
+    <div class="layer" style="background:rgba(5,8,22,0.4);border:1px solid rgba(212,168,83,0.08);">
+      <span>◇ 浮遊シェイプ（スクエア、ドット）<code style="font-size:0.75rem;color:rgba(245,240,232,0.5);">float 8-12s</code></span>
+      <span class="z">z: -10</span>
+    </div>
+    <div class="layer" style="background:rgba(212,168,83,0.06);border:1px solid rgba(212,168,83,0.08);">
+      <span>💡 グロウオーブ × 2 <code style="font-size:0.75rem;color:rgba(245,240,232,0.5);">pulse-glow 4s</code></span>
+      <span class="z">z: -10</span>
+    </div>
+    <div class="layer" style="background:rgba(5,8,22,0.8);border:1px solid rgba(212,168,83,0.06);">
+      <span>🌫️ 放射状フェードマスク</span>
+      <span class="z">z: -10</span>
+    </div>
+    <div class="layer" style="background:rgba(212,168,83,0.04);border:1px solid rgba(212,168,83,0.06);">
+      <span>📐 ラインググリッド <code style="font-size:0.75rem;color:rgba(245,240,232,0.5);">48px 間隔</code></span>
+      <span class="z">z: -10</span>
+    </div>
+    <div class="layer" style="background:#050816;border:1px solid rgba(212,168,83,0.04);">
+      <span>🌑 body background <code style="font-size:0.75rem;color:rgba(245,240,232,0.5);">#050816</code></span>
+      <span class="z">z: base</span>
+    </div>
+  </div>
+</div>
+
+<!-- 6. Tradeoffs -->
+<h2>6. 設計判断のトレードオフ</h2>
+<div class="section">
+  <table>
+    <tr><th>選択肢</th><th>メリット</th><th>デメリット</th><th></th></tr>
+    <tr><td>A. 忠実クローン</td><td>クローン精度アピール</td><td>個性なし</td><td></td></tr>
+    <tr class="selected"><td><strong>B. ハイブリッド ✓</strong></td><td><strong>クローン力 + オリジナリティ</strong></td><td>実装がやや複雑</td><td>✅</td></tr>
+    <tr><td>C. 完全オリジナル</td><td>デザイン力アピール</td><td>クローンスキル不明</td><td></td></tr>
+  </table>
+  <table style="margin-top:16px;">
+    <tr><th>配色</th><th>メリット</th><th>デメリット</th><th></th></tr>
+    <tr><td>B1. ゴールド全振り</td><td>lesson2 との統一感</td><td>オレンジの個性が消える</td><td></td></tr>
+    <tr class="selected"><td><strong>B2. オレンジ × ゴールド ✓</strong></td><td><strong>両方の世界を継承</strong></td><td>色調整が難しい</td><td>✅</td></tr>
+    <tr><td>B3. シネマティック</td><td>映画的な美しさ</td><td>異なりすぎる</td><td></td></tr>
+  </table>
+  <table style="margin-top:16px;">
+    <tr><th>背景パターン</th><th>メリット</th><th>デメリット</th><th></th></tr>
+    <tr><td>ドットグリッド</td><td>最もミニマル</td><td>平凡</td><td></td></tr>
+    <tr class="selected"><td><strong>ラインググリッド ✓</strong></td><td><strong>テック感 + 読みやすい</strong></td><td>個性は控えめ</td><td>✅</td></tr>
+    <tr><td>トポグラフィー</td><td>個性的</td><td>好みが分かれる</td><td></td></tr>
+  </table>
+</div>
+
+<!-- 7. Checklist -->
+<h2>7. 初心者向けチェックリスト</h2>
+<div class="section">
+  <ul class="checklist">
+    <li><code>"use client"</code> は useState / useEffect / ブラウザAPI を使うコンポーネントにだけ付ける</li>
+    <li>Next.js 16 では <code>params</code> は Promise → 必ず <code>await params</code> する</li>
+    <li>Tailwind CSS v4 では tailwind.config.js は不要 → <code>@theme inline</code> で設定</li>
+    <li>ダークテーマの半透明テキストは実際にブラウザで読みやすさを確認する</li>
+    <li>背景装飾は <code>position: fixed</code> + <code>-z-10</code> でコンテンツの後ろに配置</li>
+    <li>iframe の <code>pointer-events: none</code> を忘れるとプレビューがクリックを奪う</li>
+    <li>デザイントークンは「色名」ではなく「役割名」で定義（<code>--accent</code> > <code>--orange</code>）</li>
+    <li>カードの存在感は枠線ではなく背景色の差 + shadow で出す（2025-26年トレンド）</li>
+  </ul>
+</div>
+
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'dark',
+    themeVariables: {
+      primaryColor: '#0b1f3a',
+      primaryTextColor: '#f5f0e8',
+      primaryBorderColor: '#d4a853',
+      lineColor: '#d4a853',
+      secondaryColor: '#1a0a00',
+      tertiaryColor: '#050816',
+      fontFamily: 'DM Sans, system-ui, sans-serif',
+      fontSize: '13px',
+    }
+  });
+</script>
+</body>
+</html>
