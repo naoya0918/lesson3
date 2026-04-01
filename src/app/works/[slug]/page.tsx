@@ -55,7 +55,7 @@ export default async function WorkDetailPage({
           {work.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full border border-line bg-surface-solid/50 px-3 py-1 font-mono text-xs text-ink2"
+              className="rounded-full border border-accent2/8 bg-bg/80 px-3 py-1 font-mono text-xs text-accent2/60"
             >
               {tag}
             </span>
@@ -67,7 +67,7 @@ export default async function WorkDetailPage({
             href={work.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 font-mono text-sm text-accent transition-colors hover:text-accent2"
+            className="inline-flex items-center gap-1 font-mono text-sm text-accent2 transition-colors hover:text-accent"
           >
             サイトを見る ↗
           </a>
@@ -77,7 +77,7 @@ export default async function WorkDetailPage({
           <WorkPreview url={work.url} title={work.title} />
         </div>
 
-        <div className="rounded-2xl border border-line bg-surface p-6 backdrop-blur-xl">
+        <div className="rounded-2xl border border-line bg-surface p-6 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
           <h2 className="mb-4 text-lg font-semibold text-ink">学んだこと</h2>
           <ul className="flex flex-col gap-2">
             {work.learnings.map((item) => (
@@ -85,7 +85,7 @@ export default async function WorkDetailPage({
                 key={item}
                 className="flex items-start gap-2 text-sm text-ink2"
               >
-                <span className="mt-1 text-accent">▸</span>
+                <span className="mt-1 text-accent2">▸</span>
                 {item}
               </li>
             ))}

@@ -21,8 +21,8 @@ export default function TabFilter({
           className={cn(
             "rounded-full border px-4 py-1.5 font-mono text-xs transition-all duration-200",
             active === cat
-              ? "border-accent bg-accent/10 text-ink"
-              : "border-line text-ink3 hover:border-ink2 hover:text-ink2"
+              ? "border-accent/20 bg-gradient-to-br from-accent/10 to-accent2/8 text-ink"
+              : "border-line text-ink3 hover:border-accent2/20 hover:text-ink2"
           )}
         >
           {cat}

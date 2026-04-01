@@ -27,13 +27,13 @@ export default function WorkPreview({
   }, []);
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-line bg-surface-solid">
-      <div className="border-b border-line px-4 py-2">
+    <div className="overflow-hidden rounded-2xl border border-line bg-surface-solid shadow-[0_12px_40px_rgba(0,0,0,0.5)]">
+      <div className="border-b border-accent2/8 px-4 py-2">
         <div className="flex items-center gap-2">
           <div className="flex gap-1.5">
-            <span className="h-3 w-3 rounded-full bg-ink3/30" />
-            <span className="h-3 w-3 rounded-full bg-ink3/30" />
-            <span className="h-3 w-3 rounded-full bg-ink3/30" />
+            <span className="h-3 w-3 rounded-full bg-ink3" />
+            <span className="h-3 w-3 rounded-full bg-ink3" />
+            <span className="h-3 w-3 rounded-full bg-ink3" />
           </div>
           <span className="flex-1 truncate text-center font-mono text-xs text-ink3">
             {url}
