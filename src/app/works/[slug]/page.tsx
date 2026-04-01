@@ -55,7 +55,7 @@ export default async function WorkDetailPage({
           {work.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full border border-accent2/8 bg-bg/80 px-3 py-1 font-mono text-xs text-accent2/60"
+              className="rounded-full border border-accent2/15 bg-bg/80 px-3 py-1 font-mono text-xs text-accent2/80"
             >
               {tag}
             </span>

@@ -27,7 +27,7 @@ export default function WorkCard({ work }: { work: Work }) {
           {work.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded border border-accent2/8 bg-bg/80 px-2 py-0.5 font-mono text-[10px] text-accent2/60"
+              className="rounded border border-accent2/15 bg-bg/80 px-2 py-0.5 font-mono text-[10px] text-accent2/80"
             >
               {tag}
             </span>
