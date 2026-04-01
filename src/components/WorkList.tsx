@@ -4,6 +4,7 @@ import { useState } from "react";
 import { works, categories, type Category } from "@/data/works";
 import TabFilter from "./TabFilter";
 import WorkCard from "./WorkCard";
+import ScrollReveal from "./ScrollReveal";
 
 export default function WorkList() {
   const [active, setActive] = useState<Category>("All");
@@ -21,8 +22,10 @@ export default function WorkList() {
         />
       </div>
       <div className="flex flex-col gap-4">
-        {filtered.map((work) => (
-          <WorkCard key={work.slug} work={work} />
+        {filtered.map((work, i) => (
+          <ScrollReveal key={work.slug} delay={i * 120}>
+            <WorkCard work={work} />
+          </ScrollReveal>
         ))}
       </div>
     </div>
