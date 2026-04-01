@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { works } from "@/data/works";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import WorkPreview from "@/components/WorkPreview";
 
 export function generateStaticParams() {
@@ -30,7 +32,8 @@ export default async function WorkDetailPage({
 
   return (
     <div className="min-h-screen">
-      <div className="mx-auto max-w-[860px] px-5 py-12">
+      <Header />
+      <div className="mx-auto max-w-[860px] px-5 pb-16">
         <Link
           href="/"
           className="mb-8 inline-flex items-center gap-1 font-mono text-sm text-ink2 transition-colors hover:text-accent"
@@ -89,6 +92,7 @@ export default async function WorkDetailPage({
           </ul>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
