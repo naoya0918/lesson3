@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/naoya/**)",
+      "Bash(find /c/Users/naoya -maxdepth 5 -name *.html -path *portfolio*)",
+      "Bash(find /c/Users/naoya -maxdepth 5 -name *.html -path *cloner*)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:team-f-cc-lab.vercel.app)",
+      "Bash(find /c/Users/naoya/.claude/plugins/cache/claude-plugins-official/superpowers -name start-server*)",
+      "Bash(bash /c/Users/naoya/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.6/skills/brainstorming/scripts/start-server.sh --project-dir /c/Users/naoya/programming-dojo/lesson3)",
+      "Bash(xargs cat:*)",
+      "Bash(npx:*)",
+      "Bash(cp -r /c/Users/naoya/programming-dojo/lesson3-temp/* /c/Users/naoya/programming-dojo/lesson3/)",
+      "Bash(cp /c/Users/naoya/programming-dojo/lesson3-temp/.gitignore /c/Users/naoya/programming-dojo/lesson3/)",
+      "Bash(cp -r /c/Users/naoya/programming-dojo/lesson3-temp/.git /c/Users/naoya/programming-dojo/lesson3/)",
+      "Bash(rm -rf /c/Users/naoya/programming-dojo/lesson3-temp)",
+      "Bash(cp /c/Users/naoya/programming-dojo/lesson3-temp/package.json /c/Users/naoya/programming-dojo/lesson3/)",
+      "Bash(cp /c/Users/naoya/programming-dojo/lesson3-temp/package-lock.json /c/Users/naoya/programming-dojo/lesson3/)",
+      "Bash(cp /c/Users/naoya/programming-dojo/lesson3-temp/postcss.config.mjs /c/Users/naoya/programming-dojo/lesson3/)",
+      "Bash(cp /c/Users/naoya/programming-dojo/lesson3-temp/tsconfig.json /c/Users/naoya/programming-dojo/lesson3/)",
+      "Bash(cp /c/Users/naoya/programming-dojo/lesson3-temp/next.config.ts /c/Users/naoya/programming-dojo/lesson3/)"
+    ]
+  }
+}

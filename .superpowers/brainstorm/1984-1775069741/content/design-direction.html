@@ -1,0 +1,109 @@
+<h2>デザインの方向性を選んでください</h2>
+<p class="subtitle">team-f-cc-lab.vercel.app のレイアウトをベースに、ポートフォリオとしてどうアレンジするか</p>
+
+<div class="cards">
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#0a0a0a;padding:24px;border-radius:8px;min-height:220px;">
+        <div style="color:#d4804a;font-family:monospace;font-size:12px;margin-bottom:12px;">Claude Code Lab</div>
+        <div style="display:flex;gap:8px;margin-bottom:16px;">
+          <span style="background:#1a1a1a;color:#f0f0f0;padding:4px 12px;border-radius:99px;font-size:11px;border:1px solid #333;">All</span>
+          <span style="background:transparent;color:#777;padding:4px 12px;border-radius:99px;font-size:11px;border:1px solid #333;">Lesson</span>
+          <span style="background:transparent;color:#777;padding:4px 12px;border-radius:99px;font-size:11px;border:1px solid #333;">Works</span>
+        </div>
+        <div style="background:#141414;border-radius:8px;padding:12px;margin-bottom:8px;border:1px solid #222;">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <div style="color:#f0f0f0;font-size:13px;font-weight:600;">Lesson 1 - ポートフォリオ</div>
+              <div style="color:#777;font-size:11px;margin-top:4px;">素のHTML/CSS/JSで作成</div>
+            </div>
+            <div style="width:60px;height:40px;background:#1a1a1a;border-radius:4px;border:1px solid #333;"></div>
+          </div>
+        </div>
+        <div style="background:#141414;border-radius:8px;padding:12px;border:1px solid #222;">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <div style="color:#f0f0f0;font-size:13px;font-weight:600;">Lesson 2 - Next.js App</div>
+              <div style="color:#777;font-size:11px;margin-top:4px;">Next.js + Tailwind CSS</div>
+            </div>
+            <div style="width:60px;height:40px;background:#1a1a1a;border-radius:4px;border:1px solid #333;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A. 忠実クローン型</h3>
+      <p>team-f-cc-lab のダークUI・カードレイアウト・タブフィルターをほぼそのまま再現。色味もオレンジ×ダークをキープ。</p>
+      <p style="color:#888;font-size:13px;">→ クローン精度を実績として見せたい場合に最適</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#050816;padding:24px;border-radius:8px;min-height:220px;">
+        <div style="text-align:center;margin-bottom:16px;">
+          <div style="color:#f97316;font-family:sans-serif;font-size:14px;font-weight:700;letter-spacing:0.1em;">有田の成長記録</div>
+          <div style="color:#e5e7eb;font-size:11px;margin-top:4px;">3ヶ月で独立する男のポートフォリオ</div>
+        </div>
+        <div style="display:flex;gap:8px;justify-content:center;margin-bottom:16px;">
+          <span style="background:linear-gradient(135deg,#f97316,#facc15);color:#0b1f3a;padding:4px 12px;border-radius:99px;font-size:11px;font-weight:600;">All</span>
+          <span style="color:#999;padding:4px 12px;border-radius:99px;font-size:11px;border:1px solid #334;">Lesson</span>
+          <span style="color:#999;padding:4px 12px;border-radius:99px;font-size:11px;border:1px solid #334;">Works</span>
+        </div>
+        <div style="background:rgba(15,23,42,0.9);border-radius:12px;padding:12px;margin-bottom:8px;border:1px solid rgba(148,163,184,0.25);box-shadow:0 8px 20px rgba(0,0,0,0.4);">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <div style="color:#f0f0f0;font-size:13px;font-weight:600;">Lesson 1</div>
+              <div style="color:#999;font-size:11px;margin-top:2px;">ポートフォリオ v1</div>
+            </div>
+            <div style="width:60px;height:40px;background:linear-gradient(135deg,rgba(249,115,22,0.2),rgba(11,31,58,0.5));border-radius:6px;"></div>
+          </div>
+        </div>
+        <div style="background:rgba(15,23,42,0.9);border-radius:12px;padding:12px;border:1px solid rgba(148,163,184,0.25);box-shadow:0 8px 20px rgba(0,0,0,0.4);">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <div style="color:#f0f0f0;font-size:13px;font-weight:600;">Lesson 2</div>
+              <div style="color:#999;font-size:11px;margin-top:2px;">Next.js アプリ</div>
+            </div>
+            <div style="width:60px;height:40px;background:linear-gradient(135deg,rgba(249,115,22,0.2),rgba(11,31,58,0.5));border-radius:6px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B. ハイブリッド型（おすすめ）</h3>
+      <p>team-f-cc-lab のレイアウト構造（タブ＋カード）を採用しつつ、lesson1のネイビー×オレンジグラデーションの配色を融合。自分らしさを残す。</p>
+      <p style="color:#888;font-size:13px;">→ クローン力＋オリジナリティを両立</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#0b1f3a;padding:24px;border-radius:8px;min-height:220px;">
+        <div style="text-align:center;margin-bottom:20px;">
+          <div style="background:linear-gradient(135deg,#f97316,#facc15);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:18px;font-weight:700;">Arita Portfolio</div>
+          <div style="color:rgba(255,255,255,0.6);font-size:10px;margin-top:6px;letter-spacing:0.2em;">INDEPENDENT IN 3 MONTHS</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div style="background:rgba(255,255,255,0.05);border-radius:10px;padding:14px;border:1px solid rgba(249,115,22,0.3);text-align:center;">
+            <div style="color:#f97316;font-size:20px;font-weight:700;">01</div>
+            <div style="color:#e5e7eb;font-size:11px;margin-top:4px;">HTML/CSS</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.05);border-radius:10px;padding:14px;border:1px solid rgba(249,115,22,0.3);text-align:center;">
+            <div style="color:#facc15;font-size:20px;font-weight:700;">02</div>
+            <div style="color:#e5e7eb;font-size:11px;margin-top:4px;">Next.js</div>
+          </div>
+        </div>
+        <div style="margin-top:8px;background:rgba(255,255,255,0.05);border-radius:10px;padding:14px;border:1px solid rgba(249,115,22,0.3);text-align:center;">
+          <div style="color:#f97316;font-size:20px;font-weight:700;">03</div>
+          <div style="color:#e5e7eb;font-size:11px;margin-top:4px;">This Site (Clone)</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C. 完全オリジナル型</h3>
+      <p>team-f-cc-lab の技術スタック（Next.js + Tailwind）だけ借りて、レイアウトは独自設計。成長のタイムライン的な見せ方。</p>
+      <p style="color:#888;font-size:13px;">→ デザイン力もアピールしたい場合</p>
+    </div>
+  </div>
+</div>

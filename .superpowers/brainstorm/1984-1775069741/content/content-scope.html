@@ -1,0 +1,52 @@
+<h2>初期コンテンツの範囲は？</h2>
+<p class="subtitle">最初にカードとして載せるものを確認</p>
+
+<div class="section">
+  <h3>現在確認できるもの</h3>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;">
+    <div style="background:#1a1a1a;border:1px solid #333;border-radius:8px;padding:12px 16px;flex:1;min-width:200px;">
+      <div style="color:#f97316;font-size:12px;font-weight:600;margin-bottom:4px;">Lesson 1</div>
+      <div style="color:#f0f0f0;font-size:14px;font-weight:600;">3ヶ月で独立する男の記録</div>
+      <div style="color:#777;font-size:12px;margin-top:4px;">HTML / CSS / JS</div>
+      <div style="color:#555;font-size:11px;margin-top:2px;">→ カテゴリ: Frontend</div>
+    </div>
+    <div style="background:#1a1a1a;border:1px solid #333;border-radius:8px;padding:12px 16px;flex:1;min-width:200px;">
+      <div style="color:#facc15;font-size:12px;font-weight:600;margin-bottom:4px;">Lesson 2</div>
+      <div style="color:#f0f0f0;font-size:14px;font-weight:600;">Next.js アプリ</div>
+      <div style="color:#777;font-size:12px;margin-top:4px;">Next.js / Tailwind / TypeScript</div>
+      <div style="color:#555;font-size:11px;margin-top:2px;">→ カテゴリ: Frontend</div>
+    </div>
+    <div style="background:#1a1a1a;border:1px solid #d4804a;border-radius:8px;padding:12px 16px;flex:1;min-width:200px;">
+      <div style="color:#d4804a;font-size:12px;font-weight:600;margin-bottom:4px;">Lesson 3（このサイト）</div>
+      <div style="color:#f0f0f0;font-size:14px;font-weight:600;">ポートフォリオ v2</div>
+      <div style="color:#777;font-size:12px;margin-top:4px;">Next.js / Tailwind / shadcn/ui</div>
+      <div style="color:#555;font-size:11px;margin-top:2px;">→ カテゴリ: Frontend</div>
+    </div>
+  </div>
+</div>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Lesson 1 + Lesson 2 の2枚だけ</h3>
+      <p>このサイト自体（lesson3）は載せない。純粋に過去の作品を見せる場として。</p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Lesson 1 + 2 + 3（このサイト自身）の3枚</h3>
+      <p>lesson3 のカードも追加して「このサイトも自分で作った」ことをアピール。自己参照的だが成長の証拠になる。</p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>3枚 + 過去の課題（テトリス等）も追加</h3>
+      <p>programming-dojo/過去/課題2 にあるテトリスなども含めて、できるだけ多くの実績を載せる。</p>
+    </div>
+  </div>
+</div>
