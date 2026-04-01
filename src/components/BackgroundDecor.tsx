@@ -6,6 +6,23 @@ export default function BackgroundDecor() {
       className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
       aria-hidden="true"
     >
+      {/* Line grid pattern with radial fade */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(212,168,83,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(212,168,83,0.045) 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+        }}
+      />
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 70% at 50% 40%, transparent 20%, #050816 75%)",
+        }}
+      />
+
       {/* Glow orb — gold, top-left */}
       <div
         className="absolute top-[10%] left-[8%] h-[340px] w-[340px] rounded-full blur-3xl"
