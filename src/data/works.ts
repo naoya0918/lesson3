@@ -45,4 +45,20 @@ export const works: Work[] = [
       "TypeScript による型安全な開発",
     ],
   },
+  {
+    slug: "lesson4",
+    title: "NexTech Solutions コーポレートサイト",
+    description:
+      "架空のIT企業「NexTech Solutions」のコーポレートサイト。サービス紹介・実績・CTAセクションを備えたビジネス向けLP。",
+    category: "Frontend",
+    tags: ["Next.js", "Tailwind CSS", "TypeScript"],
+    url: "https://lesson4-self.vercel.app/",
+    thumbnail: null,
+    learnings: [
+      "コーポレートサイトのレイアウト設計",
+      "ビジネス向けLPの情報構成とCTA配置",
+      "統計セクションなど動的な数値表示",
+      "日本語Webフォント（Noto Sans JP）の活用",
+    ],
+  },
 ];
