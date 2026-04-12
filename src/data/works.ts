@@ -61,4 +61,15 @@ export const works: Work[] = [
       "日本語Webフォント（Noto Sans JP）の活用",
     ],
   },
+  {
+    slug: "supabase-contacts",
+    title: "問い合わせ管理ダッシュボード",
+    description:
+      "問い合わせデータのCRUD操作（一覧表示・ステータス変更・削除・新規作成）ができる管理ダッシュボード。Server Actionsによるサーバー側処理とSupabaseのリアルタイムDB連携。",
+    category: "App",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Server Actions"],
+    url: "https://supabase-contacts-beta.vercel.app/",
+    thumbnail: null,
+    learnings: [],
+  },
 ];
