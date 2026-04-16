@@ -70,7 +70,12 @@ export const works: Work[] = [
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Server Actions"],
     url: "https://supabase-contacts-beta.vercel.app/",
     thumbnail: null,
-    learnings: [],
+    learnings: [
+      "Server ActionsによるDB操作（CRUD全機能）",
+      "TypeScript Union型による二重防御バリデーション",
+      "revalidatePathとuseTransitionによる状態管理",
+      "RLS（Row Level Security）の基礎概念",
+    ],
   },
   {
     slug: "salon-lp",
@@ -81,6 +86,11 @@ export const works: Work[] = [
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Server Actions"],
     url: "https://salon-lp-seven.vercel.app/",
     thumbnail: null,
-    learnings: [],
+    learnings: [
+      "シングルページLP構成と複数選択チェックボックス（Supabase text[]型保存）",
+      "next/font可変フォントとCSS変数によるデザイントークン設計",
+      "IntersectionObserverによるスクロールリビール",
+      "「機能実装→デザイン仕上げ」の開発フロー",
+    ],
   },
 ];
