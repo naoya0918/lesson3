@@ -72,4 +72,15 @@ export const works: Work[] = [
     thumbnail: null,
     learnings: [],
   },
+  {
+    slug: "salon-lp",
+    title: "MAISON LUMIÈRE - 美容室LP",
+    description:
+      "架空の高級美容室の集客用シングルページLP。予約フォーム（Supabase連携）、メニュー一覧（カテゴリタブ切り替え）、Googleマップ埋め込みを実装。Editorial Maisonのデザインコンセプトで雑誌風の世界観に仕上げた。",
+    category: "App",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Server Actions"],
+    url: "https://salon-lp-seven.vercel.app/",
+    thumbnail: null,
+    learnings: [],
+  },
 ];
