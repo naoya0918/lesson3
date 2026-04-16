@@ -42,3 +42,6 @@ next-env.d.ts
 .superpowers/
 
 .vercel
+
+# プロジェクト個別のCLAUDE.mdは使わず、親ディレクトリのものを正とする
+CLAUDE.md
