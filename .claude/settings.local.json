@@ -24,7 +24,12 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(npm run:*)",
-      "WebFetch(domain:lesson2-next.vercel.app)"
+      "WebFetch(domain:lesson2-next.vercel.app)",
+      "Bash(vercel --version)",
+      "Bash(vercel:*)",
+      "WebFetch(domain:lesson4-self.vercel.app)",
+      "Bash(git push:*)",
+      "Bash(gh repo:*)"
     ]
   }
 }
